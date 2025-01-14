@@ -25,7 +25,7 @@ const navigate = useNavigate();
     }
 
     try {
-      const url = "http://localhost:8080/auth/signup";
+      const url = "https://auth-full-stack-15-1-2025.vercel.app/auth/signup";
       const response = await fetch(url, {
         method: "POST",
         headers: {

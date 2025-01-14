@@ -24,7 +24,7 @@ const Login = () => {
     }
 
     try {
-      const url = "http://localhost:8080/auth/login";
+      const url = "https://auth-full-stack-15-1-2025.vercel.app/auth/login";
       const response = await fetch(url, {
         method: "POST",
         headers: {
