@@ -4,7 +4,6 @@ import { showSuccessToast } from "../utils/toast";
 
 const Home = () => {
   const navigate = useNavigate();
-
   const [loggedInUser, setLoggedInUser] = useState("");
   const [products, setProducts] = useState([]);
 
@@ -41,24 +40,23 @@ const Home = () => {
   };
 
   return (
-    <div className="flex h-screen flex-col items-center justify-center">
-      <h1 className="mb-4 text-3xl font-bold">{loggedInUser}</h1>
-      <button
-        onClick={handleLogout}
-        className="rounded-xl border border-black bg-slate-400 px-5 py-2 text-black transition duration-300 hover:bg-slate-500"
-      >
-        Log Out
-      </button>
-      <div className="mt-4">
-        {products.map((item, index) => (
-          <ul key={index} className="mb-2">
-            <li>
-              <span>
-                {item.name}: {item.Price}
-              </span>
-            </li>
-          </ul>
-        ))}
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
+      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h1 className="text-3xl font-bold text-center mb-6">{loggedInUser}</h1>
+        <button
+          onClick={handleLogout}
+          className="w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition duration-300"
+        >
+          Log Out
+        </button>
+        <div className="mt-6">
+          {products.map((item, index) => (
+            <div key={index} className="bg-gray-50 p-4 rounded-lg mb-4 shadow-md">
+              <h2 className="text-xl font-semibold">{item.name}</h2>
+              <p className="text-gray-600">Price: {item.Price}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

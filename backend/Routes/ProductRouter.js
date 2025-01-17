@@ -1,6 +1,5 @@
 const express = require("express");
 const ensureAuthentication = require("../Middlewares/EnsureAuth");
-
 const router = express.Router();
 router.get("/", ensureAuthentication, (req, res) => {
     res.status(200).json([

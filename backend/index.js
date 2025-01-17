@@ -12,6 +12,7 @@ app.use(cors())
 
 app.use("/auth", AuthRouter)
 app.use("/products",ProductRouter)
+
 app.get("/ping", (req, res) => {
     res.send("pong")
 })
